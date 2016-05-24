@@ -1,18 +1,7 @@
-# 6.00 Problem Set 3
-# 
-# Hangman game
-#
-
-# -----------------------------------
-# Helper code
-# You don't need to understand this helper code,
-# but you will have to know how to use the functions
-# (so be sure to read the docstrings!)
-
 import random
 import string
 
-WORDLIST_FILENAME = "C:/Users/tenda/learn python/words.txt"
+WORDLIST_FILENAME = "words.txt"
 
 def loadWords():
     """
@@ -39,11 +28,6 @@ def chooseWord(wordlist):
     """
     return random.choice(wordlist)
 
-# end of helper code
-# -----------------------------------
-
-# Load the list of words into the variable wordlist
-# so that it can be accessed from anywhere in the program
 wordlist = loadWords()
 
 def isWordGuessed(secretWord, lettersGuessed):
@@ -53,7 +37,7 @@ def isWordGuessed(secretWord, lettersGuessed):
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE...
+  
     if len(secretWord)==0:
         return True
     else:
@@ -70,7 +54,7 @@ def getGuessedWord(secretWord, lettersGuessed):
     returns: string, comprised of letters and underscores that represents
       what letters in secretWord have been guessed so far.
     '''
-    # FILL IN YOUR CODE HERE...
+   
     result = []
     for i in secretWord:
         result.append("_")
@@ -87,7 +71,7 @@ def getAvailableLetters(lettersGuessed):
     returns: string, comprised of letters that represents what letters have not
       yet been guessed.
     '''
-    # FILL IN YOUR CODE HERE...
+   
     import string
     result = list(string.ascii_lowercase)
     for i in lettersGuessed:
@@ -114,7 +98,7 @@ def hangman(secretWord):
 
     Follows the other limitations detailed in the problem write-up.
     '''
-    # FILL IN YOUR CODE HERE...
+   
     import string
     print('Welcome to the game, Hangman!')
     print('I am thinking of a word that is '+str(len(secretWord))+' letters long.')
